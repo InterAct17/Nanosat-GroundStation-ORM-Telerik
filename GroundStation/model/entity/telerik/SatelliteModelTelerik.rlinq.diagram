@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 15.5, 18.625" name="SatelliteModelTelerik" isDefault="true">
+    <DomainModelMoniker name="/SatelliteModelTelerik" />
+    <nestedChildShapes>
+      <classShape Id="b287216d-4d94-4e88-a757-afc3334358f7" absoluteBounds="7.75, 1, 1.5, 2.531977539062499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Value_alia" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f5fb53cc-74dc-4769-aab2-0f290cfbb394" absoluteBounds="7.765, 1.5099999999999998, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="aea99dfe-c8b7-4c60-9c4c-266be697d561" absoluteBounds="7.765, 2.7308968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6f7f19ed-17fd-40f9-af75-c9c43599f3da" absoluteBounds="7.765, 2.9902864583333333, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="59ed9eb9-d361-4276-9947-95d1e1c606cc" absoluteBounds="7.75, 8.75, 1.5, 2.3396761067708347" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Telemetry_data_arragment" />
+        <nestedChildShapes>
+          <elementListCompartment Id="1c3b636f-6f1a-4e6f-a6c9-318bcf240d55" absoluteBounds="7.765, 9.26, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="235e6572-5b09-4815-ab59-32389c0d554f" absoluteBounds="7.765, 10.480896809895834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="dabf0717-cfbe-402d-949a-222daffe17d5" absoluteBounds="7.765, 10.740286458333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="378cf356-988a-40d9-97de-f90b95584354" absoluteBounds="9.75, 4.75, 1.5, 2.7242789713541669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Telemetry" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ba6f8d44-ff4b-4393-b431-2a9089efa4ab" absoluteBounds="9.765, 5.26, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="186df185-9586-4fde-a65a-9dbbcd4a886b" absoluteBounds="9.765, 6.8654996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="162c6b8c-765f-4a73-bc19-e709815e0634" absoluteBounds="9.765, 7.1248893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="56a1f4b4-07a7-442d-ada8-71fd50839ec7" absoluteBounds="3, 14.875, 1.5, 2.7242789713541669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Subsystem_mode" />
+        <nestedChildShapes>
+          <elementListCompartment Id="9c086600-0b80-471f-866d-0717fd43ea6e" absoluteBounds="3.0149999999999997, 15.385, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a4bb9fe7-27fd-4ef1-800f-18a90e310450" absoluteBounds="3.0149999999999997, 16.7981982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c7449d3f-87f3-463c-9347-74ab00592e75" absoluteBounds="3.0149999999999997, 17.057587890625, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="efe23182-fa34-47a4-967b-50429a080380" absoluteBounds="5.25, 12.75, 1.5, 2.9165804036458347" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Subsystem" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ae565623-1a6d-4c1d-b47d-ffa10e511914" absoluteBounds="5.2650000000000006, 13.26, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d055fea0-7ed8-4a3c-bad5-7ef488467cf0" absoluteBounds="5.2650000000000006, 14.480896809895834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6e2e9e30-8bd0-42bf-94cc-98192e89908d" absoluteBounds="5.2650000000000006, 14.740286458333333, 1.4700000000000002, 0.8262939453125" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="e8551978-176e-421a-a843-d88c20446e88" absoluteBounds="3, 3, 1.5, 3.4934847005208329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Session_operation_list" />
+        <nestedChildShapes>
+          <elementListCompartment Id="84d1689f-f801-4c0a-aa0d-fcc6fc9eef28" absoluteBounds="3.0149999999999997, 3.51, 1.4700000000000002, 1.7878011067708333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c8e68235-ac13-461d-b954-8fe593111780" absoluteBounds="3.0149999999999997, 5.3078011067708335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b929a558-267d-41a0-acb4-e96d3d57e066" absoluteBounds="3.0149999999999997, 5.5671907552083333, 1.4700000000000002, 0.8262939453125" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="d37f92ff-f27b-4393-8ea9-cc08369f184a" absoluteBounds="5.25, 4.125, 1.5, 4.262690429687499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Parameter" />
+        <nestedChildShapes>
+          <elementListCompartment Id="3968b714-432c-4c88-be18-291672467b5c" absoluteBounds="5.265, 4.635, 1.4700000000000002, 2.749308268229167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6a7e73cd-5a32-4738-9552-b81d048977c2" absoluteBounds="5.265, 7.3943082682291665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1b290da8-0ce7-43e5-9314-e1376adb3d58" absoluteBounds="5.265, 7.6536979166666663, 1.4700000000000002, 0.633992513020833" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="12e62061-0933-4443-8be9-993d4a994c42" absoluteBounds="5.25, 1.125, 1.5, 2.1473746744791669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Operation_group" />
+        <nestedChildShapes>
+          <elementListCompartment Id="095ac4fe-f60f-4460-a536-dce44148f5ee" absoluteBounds="5.265, 1.6349999999999998, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="0cf956b9-2741-4ecf-bdc9-5ae7c8cde204" absoluteBounds="5.265, 2.4712939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4a5f9171-1d47-4c4a-8dc3-0961764d12a1" absoluteBounds="5.265, 2.7306835937500002, 1.4700000000000002, 0.44169108072916674" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="fc6fd768-a5d6-49e1-82da-8c5afdfc9620" absoluteBounds="0.75, 7.75, 1.5, 1.955073242187499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Modbus_type" />
+        <nestedChildShapes>
+          <elementListCompartment Id="68985f3e-c9b9-4cac-8f7a-2437b92d68df" absoluteBounds="0.765, 8.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ac144a83-c55d-496d-98a3-07cf228b6a51" absoluteBounds="0.765, 9.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c8e804bd-eb23-4206-8057-f2d2bd151850" absoluteBounds="0.765, 9.35568359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1f784eb1-9ae4-4543-a114-45533f9243f7" absoluteBounds="9.75, 8.75, 1.5, 2.1473746744791669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Modbus_function" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d2122418-a9c9-4c1d-8708-f40a6ad7f66b" absoluteBounds="9.765, 9.26, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="41f1788a-7459-4a0e-b66e-9a1e69055784" absoluteBounds="9.765, 10.288595377604167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e3766699-3f50-40c2-a2ff-a3af1aabe2df" absoluteBounds="9.765, 10.547985026041665, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="478abc54-069b-4192-81cd-ca99f2d0b584" absoluteBounds="11.75, 4.75, 1.5, 2.3396761067708329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Log_record" />
+        <nestedChildShapes>
+          <elementListCompartment Id="42787340-379b-4e66-81c4-8863825a4090" absoluteBounds="11.765, 5.26, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3f492e82-452f-4bb4-9fff-658a69ff8018" absoluteBounds="11.765, 6.4808968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="5684762d-9829-46c6-a1d3-0235f7f86341" absoluteBounds="11.765, 6.7402864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="2664d8c5-35ff-42a8-94d9-19eed1f11528" absoluteBounds="7.5, 5, 1.5, 2.531977539062499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Device" />
+        <nestedChildShapes>
+          <elementListCompartment Id="56e2d049-14f7-4409-9c29-b7e4d45497d9" absoluteBounds="7.515, 5.51, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6614aefb-562b-4513-84b5-e26c07c16533" absoluteBounds="7.515, 6.5385953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="fb494338-469b-4836-a37a-84a89a41584f" absoluteBounds="7.515, 6.7979850260416663, 1.4700000000000002, 0.63399251302083326" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="e5b46588-81fb-476c-be5f-c7b33b43316b" absoluteBounds="3, 10.875, 1.5, 3.3011832682291669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Cyclogram_property" />
+        <nestedChildShapes>
+          <elementListCompartment Id="1fb65ef4-e0e8-4865-9cc5-52f65c40c8ca" absoluteBounds="3.0149999999999997, 11.385, 1.4700000000000002, 1.9801025390624998" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="5531bc84-f3bf-42f3-9fa9-77e2bca8e96a" absoluteBounds="3.0149999999999997, 13.3751025390625, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="09839c43-f79f-49e2-a2d3-494e04fc408e" absoluteBounds="3.0149999999999997, 13.6344921875, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="f24bd129-f802-4bfb-b497-c938b5d3ca0c" absoluteBounds="0.75, 3.25, 1.5, 2.9165804036458329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Command_control" />
+        <nestedChildShapes>
+          <elementListCompartment Id="a21e2ff4-33f4-4d9b-9d26-85148a638109" absoluteBounds="0.765, 3.76, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="5a314ddb-ee73-4859-ac91-19a78c5f86bb" absoluteBounds="0.765, 5.3654996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e09d728d-3d81-42eb-8c0b-13142e3f6d18" absoluteBounds="0.765, 5.6248893229166663, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="a6f708ee-ff5a-4151-8ef0-ea91e4ca4050" absoluteBounds="12.75, 0.75, 1.5, 2.1473746744791669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Calculation_formula" />
+        <nestedChildShapes>
+          <elementListCompartment Id="6c56aaec-effd-4158-9ec0-fe59f5a53f90" absoluteBounds="12.765, 1.2599999999999998, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9f89252b-da81-4918-a93d-cbbe61062e86" absoluteBounds="12.765, 2.2885953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b7d46aa9-8c1c-46cb-9e8c-975785c98b1c" absoluteBounds="12.765, 2.5479850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="ba513a2c-84b5-4483-aa8c-a012ecdf79df" absoluteBounds="10, 1.125, 1.5, 2.1473746744791669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/Alias_group" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d0893d63-3154-408c-be77-320335a72c22" absoluteBounds="10.015, 1.6349999999999998, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="5789fc98-3d53-4df8-b96f-ea401f93ee7a" absoluteBounds="10.015, 2.4712939453124996, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="cfc01d78-5b59-456f-96f6-13b3b311e894" absoluteBounds="10.015, 2.7306835937500002, 1.4700000000000002, 0.44169108072916674" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="7411481f-b117-4f56-91f8-5bc81a5711b9" absoluteBounds="13.75, 3.75, 1.5, 4.839594726562499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/V_session_operation_list_arragment" />
+        <nestedChildShapes>
+          <elementListCompartment Id="24413761-7343-4afd-ab9f-c639df3a34cb" absoluteBounds="13.765, 4.26, 1.4700000000000002, 3.7108154296875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="101e7845-2e5f-45ed-a881-2ad5e899a206" absoluteBounds="13.765, 7.9808154296875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e5448b2b-0dce-4709-8753-3aaed6321bbe" absoluteBounds="13.765, 8.240205078125, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="529074c5-23f7-43f3-86d9-12b08baa920a" absoluteBounds="13.75, 9.75, 1.5, 3.108881835937499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/V_session_operation_list" />
+        <nestedChildShapes>
+          <elementListCompartment Id="cbe71b4a-6ab6-4784-98da-c4de0aec9800" absoluteBounds="13.765, 10.26, 1.4700000000000002, 1.9801025390624998" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d6012c3e-2627-46cf-9128-8589fce8818f" absoluteBounds="13.765, 12.2501025390625, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="baf931fd-ff8d-4c9c-85e3-ea3e3862abb5" absoluteBounds="13.765, 12.5094921875, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="48d346da-d199-4bc1-b9a3-73dbd6794bb4" absoluteBounds="13.75, 13.75, 1.5, 1.955073242187499" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/V_session_operation_combo_box" />
+        <nestedChildShapes>
+          <elementListCompartment Id="3d75d900-6004-4fea-8884-f2eac5da3902" absoluteBounds="13.765, 14.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="2b093656-ea74-40e4-833b-d86df511bb01" absoluteBounds="13.765, 15.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="7b8dda70-dedb-4fcd-84da-f62a1075784a" absoluteBounds="13.765, 15.355683593750001, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="cb854813-e56a-4498-9503-3694b05aa803" absoluteBounds="7.75, 14.75, 1.5, 3.6857861328124972" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SatelliteModelTelerik/V_parameter" />
+        <nestedChildShapes>
+          <elementListCompartment Id="866e3897-accb-4cdc-a97d-d2c2357350b0" absoluteBounds="7.765, 15.26, 1.4700000000000002, 2.5570068359375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="28fed9c0-d5de-4529-b61c-b978f0269b8b" absoluteBounds="7.765, 17.8270068359375, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="662c7d1f-fd44-4cb8-9a56-6b6e6cc0cfe5" absoluteBounds="7.765, 18.086396484375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <associationConnector edgePoints="[(9.25 : 2.19868733723958); (10 : 2.19868733723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="3bd36f8e-6cc3-44ef-a178-832235d91ad0" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="b287216d-4d94-4e88-a757-afc3334358f7" />
+          <classShapeMoniker Id="ba513a2c-84b5-4483-aa8c-a012ecdf79df" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(4.5 : 15.2707902018229); (5.25 : 15.2707902018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="cb5af36c-3855-4834-b06e-19b6745230ac" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="56a1f4b4-07a7-442d-ada8-71fd50839ec7" />
+          <classShapeMoniker Id="efe23182-fa34-47a4-967b-50429a080380" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(6.75 : 13.71875); (7.59375 : 13.71875); (7.59375 : 7.5319775390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="6c9e529f-df20-487c-b522-a5bb0e32510d" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="efe23182-fa34-47a4-967b-50429a080380" />
+          <classShapeMoniker Id="2664d8c5-35ff-42a8-94d9-19eed1f11528" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(3.75 : 3); (3.75 : 2.0624995); (5.25 : 2.0624995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="edd440c7-0454-4c51-8bca-be1a2372f418" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="e8551978-176e-421a-a843-d88c20446e88" />
+          <classShapeMoniker Id="12e62061-0933-4443-8be9-993d4a994c42" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(4.5 : 5.30924235026042); (5.25 : 5.30924235026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="078a625b-b275-41eb-a18e-3a01693a080e" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="e8551978-176e-421a-a843-d88c20446e88" />
+          <classShapeMoniker Id="d37f92ff-f27b-4393-8ea9-cc08369f184a" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(6.75 : 6.26598876953125); (7.5 : 6.26598876953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="60f78350-9571-4a62-a468-40039c95f5a7" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="d37f92ff-f27b-4393-8ea9-cc08369f184a" />
+          <classShapeMoniker Id="2664d8c5-35ff-42a8-94d9-19eed1f11528" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(4.5 : 13.4630916341146); (5.25 : 13.4630916341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="47cdd1e4-11b1-40d6-b270-77114897d707" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="e5b46588-81fb-476c-be5f-c7b33b43316b" />
+          <classShapeMoniker Id="efe23182-fa34-47a4-967b-50429a080380" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(2.25 : 4.70829020182292); (3 : 4.70829020182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+        <AssociationMoniker Id="dfe24b7b-cde7-4663-8bfc-5fcc3293bc2d" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="f24bd129-f802-4bfb-b497-c938b5d3ca0c" />
+          <classShapeMoniker Id="e8551978-176e-421a-a843-d88c20446e88" />
+        </nodes>
+      </associationConnector>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

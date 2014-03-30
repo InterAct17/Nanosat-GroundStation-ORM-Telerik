@@ -1,0 +1,1298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="SatelliteModelTelerik" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="SatelliteModelTelerik" backend="postgresql" default-schema="public" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="GroundStation.model.entity.telerik" default="true">
+      <orm:class name="Value_alia" uniqueId="65e11694-a84b-43c8-9619-d46920885f33">
+        <orm:table name="value_alias" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="6eb0c542-850b-4ac0-8725-ef802d00172e" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_alias_group_id" property="Alias_group_id" behavior="readwrite" uniqueId="54c124e1-dcfb-4e6d-a126-f4af42fd91a6" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_value" property="Value" behavior="readwrite" uniqueId="ed9c26d8-e075-48e3-b4c8-5b57d7eed3a9" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_alias_text" property="Alias_text" behavior="readwrite" uniqueId="3f487803-1d57-46d5-a3d9-a27dc706611a" type="System.String">
+          <orm:column name="alias_text" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_alias_description" property="Alias_description" behavior="readwrite" uniqueId="e52b7192-5d3e-423a-a18f-7191c9c2ed90" type="System.String">
+          <orm:column name="alias_description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_alias_group" property="Alias_group" behavior="readwrite" uniqueId="c1a7e672-2106-413a-86af-84abf7a1ba92" type="GroundStation.model.entity.telerik.Alias_group">
+          <orm:reference uniqueId="3bd36f8e-6cc3-44ef-a178-832235d91ad0" association-name="Value_aliaHasAlias_group">
+            <orm:sharedfield name="_alias_group_id" target-class="GroundStation.model.entity.telerik.Alias_group" target-field="_id" />
+            <orm:constraint name="value_alias_alias_group_id_fkey" delete-action="dbdefaultrule" destination-table="alias_group" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Telemetry_data_arragment" uniqueId="c7a21cc5-d9a4-4f8c-b273-2dadc9a8606d">
+        <orm:table name="telemetry_data_arragment" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="7c0135be-55f1-42a6-9480-6e7f066a8fcf" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_operation_group_id" property="Operation_group_id" behavior="readwrite" uniqueId="67c81d7b-684e-4bdb-b555-27ab53885d3f" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_session_operation_group_id" property="Session_operation_group_id" behavior="readwrite" uniqueId="204454fc-745a-4170-95eb-5e0c354dc972" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="session_operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_date" property="Date" behavior="readwrite" uniqueId="721356b7-49c8-4f18-88b7-514f1a6d76c1" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="date" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_data" property="Data" behavior="readwrite" uniqueId="ef2e9636-27e6-40b9-9e76-ac10908f3304" type="System.Byte[]">
+          <orm:column name="data" sql-type="bytea" nullable="true" length="0" scale="0" ado-type="Blob" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Telemetry" uniqueId="e8ff5500-499f-4a0c-a378-dbae1e8464fd">
+        <orm:table name="telemetry" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="006041ac-74ab-4de8-97be-9cbc1ae9b4a3" type="System.Int32">
+          <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_pdata" property="Pdata" behavior="readwrite" uniqueId="be5089b3-18f9-4081-83fe-124af2f99de3" type="System.Byte[]">
+          <orm:column name="pdata" sql-type="bytea" nullable="true" length="0" scale="0" ado-type="Blob" />
+        </orm:field>
+        <orm:field name="_pdate" property="Pdate" behavior="readwrite" uniqueId="8efad50b-aa67-40a0-a551-5eb690b83933" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pdate" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
+        </orm:field>
+        <orm:field name="_ptime" property="Ptime" behavior="readwrite" uniqueId="c6a2eb97-57f8-47b2-8e46-f0f9599e25cd" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ptime" sql-type="timetz" nullable="true" length="6" scale="0" ado-type="Time" />
+        </orm:field>
+        <orm:field name="_device_msg" property="Device_msg" behavior="readwrite" uniqueId="60cdbc28-9e99-48b8-bc9e-6f2ca04e87a4" type="System.String">
+          <orm:column name="device_msg" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_device_address" property="Device_address" behavior="readwrite" uniqueId="8dedaabe-15d8-4d9d-bc07-097c32ee2cb1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="device_address" sql-type="int4" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_status" property="Status" behavior="readwrite" uniqueId="f198f97b-51c1-438f-946f-25eb4d1a616c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="status" sql-type="int4" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Subsystem_mode" uniqueId="b90df7a3-a658-4a1a-81c9-3a39c65c8f4e">
+        <orm:table name="subsystem_mode" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="09289835-cb75-4045-9df8-7fb2889794ed" type="System.Int32">
+          <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_subsystem_id" property="Subsystem_id" behavior="readwrite" uniqueId="9dd307dd-2067-4fb7-89b2-f9a093a5b51e" type="System.Int32">
+          <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="94aff6e2-0a17-4054-aa9f-133ac23dc118" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_code" property="Code" behavior="readwrite" uniqueId="0007a1ad-150c-4a65-b01b-061027741643" type="System.Int32">
+          <orm:column name="code" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_alias" property="Alias" behavior="readwrite" uniqueId="269ddbd9-3778-4c34-9130-cd2422b87983" type="System.String">
+          <orm:column name="alias" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="07bf5ffc-63e5-47b6-9088-d421a1bf08cf" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_subsystem" property="Subsystem" behavior="readwrite" uniqueId="3a8f9ae7-c3d3-4f6e-93a5-ba54fa915134" type="GroundStation.model.entity.telerik.Subsystem">
+          <orm:reference uniqueId="cb5af36c-3855-4834-b06e-19b6745230ac" association-name="Subsystem_modeHasSubsystem">
+            <orm:sharedfield name="_subsystem_id" target-class="GroundStation.model.entity.telerik.Subsystem" target-field="_id" />
+            <orm:constraint name="subsystem_subsystem_mode_id_fkey" delete-action="cascade" destination-table="subsystem" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Subsystem" uniqueId="24c8ea80-9222-405d-bf8b-959d46309668">
+        <orm:table name="subsystem" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="b0ed5ec3-a5e7-467a-a6ac-78f25ff28ca7" type="System.Int32">
+          <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_device_id" property="Device_id" behavior="readwrite" uniqueId="75eea534-143b-440c-86b7-b0f9e04bddd3" type="System.Int64">
+          <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="817e269a-4bfb-4579-a1e1-8238b2e87404" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_alias" property="Alias" behavior="readwrite" uniqueId="ffa87e01-a7ff-4537-a580-238a06df3494" type="System.String">
+          <orm:column name="alias" sql-type="varchar" nullable="false" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="c3e59794-05c7-4c4a-83e2-59827739685c" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_device" property="Device" behavior="readwrite" uniqueId="5201ae92-a0c0-435e-9f3a-576c0b1929ea" type="GroundStation.model.entity.telerik.Device">
+          <orm:reference uniqueId="6c9e529f-df20-487c-b522-a5bb0e32510d" association-name="SubsystemHasDevice">
+            <orm:sharedfield name="_device_id" target-class="GroundStation.model.entity.telerik.Device" target-field="_id" />
+            <orm:constraint name="subsystems_device_id_fkey" delete-action="cascade" destination-table="devices" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_subsystem_modes" property="Subsystem_modes" behavior="readwrite" uniqueId="418547b5-0904-4785-96bf-7cb7d2e1025a" type="GroundStation.model.entity.telerik.Subsystem_mode">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Subsystem_mode" inverse-field="_subsystem" order-by="" uniqueId="cb5af36c-3855-4834-b06e-19b6745230ac" />
+        </orm:field>
+        <orm:field name="_cyclogram_properties" property="Cyclogram_properties" behavior="readwrite" uniqueId="5fb2d74b-90ef-46fa-8fe8-41e3f5ae24e8" type="GroundStation.model.entity.telerik.Cyclogram_property">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Cyclogram_property" inverse-field="_subsystem" order-by="" uniqueId="47cdd1e4-11b1-40d6-b270-77114897d707" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Session_operation_list" uniqueId="a9b05139-3378-4094-aae5-f9e191fca235">
+        <orm:table name="session_operation_list" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="e9d99e58-403f-4c1e-b5d6-40e48115fc76" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_parameter_id" property="Parameter_id" behavior="readwrite" uniqueId="cff2f326-47d1-4e86-beea-d38b165cd245" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="parameter_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_operation_group_id" property="Operation_group_id" behavior="readwrite" uniqueId="ab82c19b-5b7d-44dd-93ac-7face700fc89" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_type" property="Type" behavior="readwrite" uniqueId="f7c81845-b978-4569-8349-c5e7719f345e" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="type" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_value" property="Value" behavior="readwrite" uniqueId="6b0619eb-0c7c-46f7-800f-94fe37a5c50b" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_priority" property="Priority" behavior="readwrite" uniqueId="20f4e577-5b3c-44a2-9f12-8369c33de070" type="System.Int64">
+          <orm:column name="priority" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_command_control_type" property="Command_control_type" behavior="readwrite" uniqueId="87f77020-a80b-4d9d-9e0a-9f1615de4cf1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_is_not_arragment" property="Is_not_arragment" behavior="readwrite" uniqueId="7577ec99-7166-4411-ad59-9df410dc9dea" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_operation_group" property="Operation_group" behavior="readwrite" uniqueId="f31ab4c3-01a7-41a0-b314-a85b898d835e" type="GroundStation.model.entity.telerik.Operation_group">
+          <orm:reference uniqueId="edd440c7-0454-4c51-8bca-be1a2372f418" association-name="Session_operation_listHasOperation_group">
+            <orm:sharedfield name="_operation_group_id" target-class="GroundStation.model.entity.telerik.Operation_group" target-field="_id" />
+            <orm:constraint name="session_operation_list_operation_group_id_fkey" delete-action="cascade" destination-table="operation_group" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_parameter" property="Parameter" behavior="readwrite" uniqueId="02f214bc-3d1c-431c-b0ef-a0821d165d2b" type="GroundStation.model.entity.telerik.Parameter">
+          <orm:reference uniqueId="078a625b-b275-41eb-a18e-3a01693a080e" association-name="Session_operation_listHasParameter">
+            <orm:sharedfield name="_parameter_id" target-class="GroundStation.model.entity.telerik.Parameter" target-field="_id" />
+            <orm:constraint name="session_operation_list_parameter_id_fkey" delete-action="dbdefaultrule" destination-table="parameters" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_command_controls" property="Command_controls" behavior="readwrite" uniqueId="ba6e40b7-08de-4785-a06e-9431d318899b" type="GroundStation.model.entity.telerik.Command_control">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Command_control" inverse-field="_session_operation_list" order-by="" uniqueId="dfe24b7b-cde7-4663-8bfc-5fcc3293bc2d" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Parameter" uniqueId="71b2291e-69b5-4285-82d9-a2c08196285d">
+        <orm:table name="parameters" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="da0263e7-5d38-4e31-b08e-752dcac02382" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_calculation_formula_id" property="Calculation_formula_id" behavior="readwrite" uniqueId="5b2dcd0a-b6a2-437d-8aad-9bcc0f96cd5c" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="calculation_formula_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_device_id" property="Device_id" behavior="readwrite" uniqueId="d57a0877-fd02-486f-81b7-8e1bc4abec86" type="System.Int64">
+          <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="fc7fffd9-48bc-4709-b677-b237d5663bfd" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="234adb72-a63b-4f3e-922e-d536e16ce3b0" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_register_address_start" property="Register_address_start" behavior="readwrite" uniqueId="899e667a-617b-4815-b461-37354039ba30" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_access" property="Access" behavior="readwrite" uniqueId="f9958a39-283f-41d9-94ff-fcb68d8da90b" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_modbus_type_id" property="Modbus_type_id" behavior="readwrite" uniqueId="f6510642-c6d7-4275-8fb1-d321fe92e36f" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_type_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_min_value" property="Min_value" behavior="readwrite" uniqueId="38647fcd-34cc-4bd1-97c2-50ec0ae3b2c8" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="min_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_max_value" property="Max_value" behavior="readwrite" uniqueId="202ba2ab-7b3b-43ca-a101-a3bd6d48396a" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="max_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_alias_group_id" property="Alias_group_id" behavior="readwrite" uniqueId="94b195a3-09ab-4c71-96f1-832356149ea2" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_start_bit" property="Start_bit" behavior="readwrite" uniqueId="7cbd7c5f-844a-4522-87bc-73c8105d89a3" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="start_bit" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_end_bit" property="End_bit" behavior="readwrite" uniqueId="7ee7a306-63cc-4d71-9fca-989911d3405f" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="end_bit" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_device" property="Device" behavior="readwrite" uniqueId="29be67ad-f801-49a2-9898-395686e22bdf" type="GroundStation.model.entity.telerik.Device">
+          <orm:reference uniqueId="60f78350-9571-4a62-a468-40039c95f5a7" association-name="ParameterHasDevice">
+            <orm:sharedfield name="_device_id" target-class="GroundStation.model.entity.telerik.Device" target-field="_id" />
+            <orm:constraint name="parameters_device_id_fkey" delete-action="dbdefaultrule" destination-table="devices" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_session_operation_lists" property="Session_operation_lists" behavior="readwrite" uniqueId="ad5caf47-b638-4b6e-a79f-a14777484769" type="GroundStation.model.entity.telerik.Session_operation_list">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Session_operation_list" inverse-field="_parameter" order-by="" uniqueId="078a625b-b275-41eb-a18e-3a01693a080e" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Operation_group" uniqueId="45f8e24b-4ac7-4519-8516-e01a9c560c34">
+        <orm:table name="operation_group" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="fbaad054-f005-4d15-ac3c-11150f2e1bf3" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="0b557289-4809-4f24-bd4f-e0e85b7d19e6" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="512" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_created_at" property="Created_at" behavior="readwrite" uniqueId="b929c542-82ec-42ed-b386-a76690ad03a9" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="created_at" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_session_operation_lists" property="Session_operation_lists" behavior="readwrite" uniqueId="71d2863a-ead8-4d01-adca-92afcf91d956" type="GroundStation.model.entity.telerik.Session_operation_list">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Session_operation_list" inverse-field="_operation_group" order-by="" uniqueId="edd440c7-0454-4c51-8bca-be1a2372f418" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Modbus_type" uniqueId="ae4ac2a9-01fc-40eb-8614-1578a056a601">
+        <orm:table name="modbus_types" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="f53bdfb9-a02a-4eff-9d52-22370785896a" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="334921eb-3134-4118-a600-ed7733ca09ad" type="System.String">
+          <orm:column name="name" sql-type="bpchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_modbus_register_count" property="Modbus_register_count" behavior="readwrite" uniqueId="d54e4133-7d0f-41d2-9663-6d31d3f0f890" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_register_count" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Modbus_function" uniqueId="2eb2cee8-0cf0-4910-ab1f-338e2699da88">
+        <orm:table name="modbus_function" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="b5c8f04a-4ce5-4314-9ee0-7e31d9dfa5ab" type="System.Int16">
+          <orm:column name="id" sql-type="int2" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="99e93740-34cf-4203-80e4-cad23e9e9ede" type="System.String">
+          <orm:column name="name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="9fcf2b76-106f-4942-b92d-4806dc7464ac" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_code" property="Code" behavior="readwrite" uniqueId="7728829f-f498-441b-a687-c762cb4833d2" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="code" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Log_record" uniqueId="dd65725e-7b78-46a7-8a94-588c3b322106">
+        <orm:table name="log_record" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="cede98c7-9331-4d8c-8ba5-c5711fd959ae" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_date" property="Date" behavior="readwrite" uniqueId="6777477d-f068-4a5b-959b-47a6e405b076" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="date" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_message" property="Message" behavior="readwrite" uniqueId="9c994d4a-8753-464e-be30-8b760256a5c5" type="System.String">
+          <orm:column name="message" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_device_id" property="Device_id" behavior="readwrite" uniqueId="ee6c312a-b276-41e8-8794-df924b901ec5" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="device_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_type" property="Type" behavior="readwrite" uniqueId="b35c721a-61d7-46ad-8acc-013a8175afee" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Device" uniqueId="21ca280f-5221-4765-96b3-98d682ab4134">
+        <orm:table name="devices" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="228a409c-0501-4c2f-8bfa-a493fd0cff01" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_modbus_address" property="Modbus_address" behavior="readwrite" uniqueId="30580e61-b2e1-4f61-8846-4364101b8a93" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_address" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="0c794092-ef01-4527-b5c0-98d118c3eb44" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="483a4207-a589-4150-9eda-c86c7a6d9025" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_subsystems" property="Subsystems" behavior="readwrite" uniqueId="11735474-da67-463c-a6e8-7affae8c078b" type="GroundStation.model.entity.telerik.Subsystem">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Subsystem" inverse-field="_device" order-by="" uniqueId="6c9e529f-df20-487c-b522-a5bb0e32510d" />
+        </orm:field>
+        <orm:field name="_parameters" property="Parameters" behavior="readwrite" uniqueId="d613b1ed-701d-46be-a05d-853e789a6179" type="GroundStation.model.entity.telerik.Parameter">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Parameter" inverse-field="_device" order-by="" uniqueId="60f78350-9571-4a62-a468-40039c95f5a7" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Cyclogram_property" uniqueId="e80b19f6-3c10-4a6b-b39a-e55d04fdc31d">
+        <orm:table name="cyclogram_properties" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="07eef47e-e7bd-40c0-af14-8c81bd57f71d" type="System.Int32">
+          <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_subsystem_id" property="Subsystem_id" behavior="readwrite" uniqueId="79b9658d-636f-44fb-b88a-6d4c99141919" type="System.Int32">
+          <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="e8d257cf-793a-4ab7-85f6-3f719ff82c82" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_modbus_start_address" property="Modbus_start_address" behavior="readwrite" uniqueId="2aa815fa-eb86-4aee-8687-b36e4ec084ad" type="System.Int32">
+          <orm:column name="modbus_start_address" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_cmnd_reg_count" property="Cmnd_reg_count" behavior="readwrite" uniqueId="3ad03053-746d-4ba9-8b8a-47bc1a4168db" type="System.Int32">
+          <orm:column name="cmnd_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_start_date_time_reg_count" property="Start_date_time_reg_count" behavior="readwrite" uniqueId="d498edb0-4b84-4431-8572-21eecc9dc8aa" type="System.Int32">
+          <orm:column name="start_date_time_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_code_size_reg_count" property="Code_size_reg_count" behavior="readwrite" uniqueId="6db70af7-2745-431e-bc76-e89e49661520" type="System.Int32">
+          <orm:column name="code_size_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_code_reg_count" property="Code_reg_count" behavior="readwrite" uniqueId="855c51e0-00ae-41f0-a22c-cdd396528e37" type="System.Int32">
+          <orm:column name="code_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_crc32_reg_count" property="Crc32_reg_count" behavior="readwrite" uniqueId="d29c4fc5-901e-4576-8d8d-08dcae92ff64" type="System.Int32">
+          <orm:column name="crc32_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_subsystem" property="Subsystem" behavior="readwrite" uniqueId="ea280fdb-0a4f-4529-ac8a-067a862c1432" type="GroundStation.model.entity.telerik.Subsystem">
+          <orm:reference uniqueId="47cdd1e4-11b1-40d6-b270-77114897d707" association-name="Cyclogram_propertyHasSubsystem">
+            <orm:sharedfield name="_subsystem_id" target-class="GroundStation.model.entity.telerik.Subsystem" target-field="_id" />
+            <orm:constraint name="subsystem_cyclogram_properties_id_fkey" delete-action="cascade" destination-table="subsystem" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="cyclogram_properties_subsystem_id_key" unique="true">
+          <orm:columnMapping>
+            <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Command_control" uniqueId="6562ef45-a508-4af6-85bd-0d368e6b8ef4">
+        <orm:table name="command_control" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="a8eb63fc-4c7d-4241-9a29-9aa6d9848a86" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_session_operation_id" property="Session_operation_id" behavior="readwrite" uniqueId="d7c6e11d-64d7-401c-a779-122846d3c54f" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="session_operation_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_hot_key" property="Hot_key" behavior="readwrite" uniqueId="c924748e-059e-4190-afe3-24182c0e391b" type="System.String">
+          <orm:column name="hot_key" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_next_session_operation_id" property="Next_session_operation_id" behavior="readwrite" uniqueId="b29e3b48-12bf-44f9-997d-f752e97c68f0" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="next_session_operation_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_show_dialog_type" property="Show_dialog_type" behavior="readwrite" uniqueId="ad09b851-eaa7-41ec-9bbe-f13b7407057f" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="show_dialog_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_show_dialog_time" property="Show_dialog_time" behavior="readwrite" uniqueId="d9ccc0fc-6e13-4eae-b0fc-8023144edc01" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="show_dialog_time" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_expression" property="Expression" behavior="readwrite" uniqueId="69a059a0-edf0-4f93-910d-b9ddf4033f98" type="System.String">
+          <orm:column name="expression" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_session_operation_list" property="Session_operation_list" behavior="readwrite" uniqueId="46da78b9-b206-4672-ab31-c3852daee2e2" type="GroundStation.model.entity.telerik.Session_operation_list">
+          <orm:reference uniqueId="dfe24b7b-cde7-4663-8bfc-5fcc3293bc2d" association-name="Command_controlHasSession_operation_list">
+            <orm:sharedfield name="_session_operation_id" target-class="GroundStation.model.entity.telerik.Session_operation_list" target-field="_id" />
+            <orm:constraint name="command_control_session_operation_id_fkey" delete-action="cascade" destination-table="session_operation_list" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Calculation_formula" uniqueId="6e892a89-4e2b-4859-8d82-eed4d14fd6d1">
+        <orm:table name="calculation_formula" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="f179b7db-322d-4428-9fd7-05fc3e9baf56" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="ddc30df3-7374-4283-884d-b8cd6824b018" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_si_unit_name" property="Si_unit_name" behavior="readwrite" uniqueId="a7d443b0-6e73-4a7e-a712-6fe971566caf" type="System.String">
+          <orm:column name="si_unit_name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_formula" property="Formula" behavior="readwrite" uniqueId="333db18d-0df1-4e8e-b3a6-888067c8dff8" type="System.String">
+          <orm:column name="formula" sql-type="varchar" nullable="true" length="512" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Alias_group" uniqueId="27bae60a-65d6-499d-a166-bce25e881ca5">
+        <orm:table name="alias_group" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="392d5735-c06b-4297-ba49-15d8dc00c4e2" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="a07043ce-78ac-4b65-90d4-52c23b9e2393" type="System.String">
+          <orm:column name="name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="7a7e0d2d-6908-4fe5-b730-36799fd9dccd" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_value_alias" property="Value_alias" behavior="readwrite" uniqueId="a52e8aed-b34e-437a-8df9-9bfb734fe06b" type="GroundStation.model.entity.telerik.Value_alia">
+          <orm:collection element-class="GroundStation.model.entity.telerik.Value_alia" inverse-field="_alias_group" order-by="" uniqueId="3bd36f8e-6cc3-44ef-a178-832235d91ad0" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="V_session_operation_list_arragment" uniqueId="fdaf705d-6d70-47ab-9292-7a0e67c31ce5">
+        <orm:table name="v_session_operation_list_arragment" view="true" />
+        <orm:identity>
+          <orm:single-field field-name="_session_operation_list_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_session_operation_list_id" property="Session_operation_list_id" behavior="readwrite" uniqueId="106c95b1-1651-4677-bacd-46e405978a35" type="System.Int64">
+          <orm:column name="session_operation_list_id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_operation_group_id" property="Operation_group_id" behavior="readwrite" uniqueId="3bf278f4-2329-4fb6-ab76-382fdf8db344" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_parameter_id" property="Parameter_id" behavior="readwrite" uniqueId="3b443a69-63ff-48a1-b202-1907fce754e1" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="parameter_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_priority" property="Priority" behavior="readwrite" uniqueId="23335a06-231c-47c7-9b98-bef896af9331" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="priority" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_command_control_type" property="Command_control_type" behavior="readwrite" uniqueId="a527cd4c-c657-4dc5-82f4-8e240fb15554" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_modbus_address" property="Modbus_address" behavior="readwrite" uniqueId="84b47cbe-6c8f-4cbe-929b-086b12073c2a" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_address" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_alias_group_id" property="Alias_group_id" behavior="readwrite" uniqueId="3d7711a0-f33e-462d-bf83-5b7cc2028bd6" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_alias_group_name" property="Alias_group_name" behavior="readwrite" uniqueId="912bb752-716d-4e71-8382-475e68192392" type="System.String">
+          <orm:column name="alias_group_name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_register_address_start" property="Register_address_start" behavior="readwrite" uniqueId="4d033318-1c6e-49a5-a89f-f334a11514d0" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_start_bit" property="Start_bit" behavior="readwrite" uniqueId="def2b778-bca7-4375-b0b5-5ad4131ba525" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="start_bit" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_end_bit" property="End_bit" behavior="readwrite" uniqueId="70c8c27d-e864-44a1-aa3c-5c2cd40c5b23" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="end_bit" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_modbus_register_count" property="Modbus_register_count" behavior="readwrite" uniqueId="8ba311a3-d971-49b6-9383-ba793d54c78b" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_register_count" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_access" property="Access" behavior="readwrite" uniqueId="a21551be-c805-4658-bc40-65b17b7f4cc1" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_device_name" property="Device_name" behavior="readwrite" uniqueId="e150711e-bab4-4324-b46e-3589a1da4d34" type="System.String">
+          <orm:column name="device_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_parameter_name" property="Parameter_name" behavior="readwrite" uniqueId="7ae3b176-edb4-4016-aaf6-91c87faf58c5" type="System.String">
+          <orm:column name="parameter_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_type" property="Type" behavior="readwrite" uniqueId="292a0f5f-f12e-45f1-8087-502700a21bc2" type="System.String">
+          <orm:column name="type" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_value" property="Value" behavior="readwrite" uniqueId="4be52a1c-2017-472b-ab96-ccab7d6366b7" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_is_not_arragment" property="Is_not_arragment" behavior="readwrite" uniqueId="f5231158-9b83-41f9-b3ad-ea9c2f3d1834" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="V_session_operation_list" uniqueId="771e76ba-e6c2-4880-9ba7-d1e0be7bdce1">
+        <orm:table name="v_session_operation_list" view="true" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="6f5763ed-355e-432c-80c0-90d02956990f" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_priority" property="Priority" behavior="readwrite" uniqueId="f7f6de88-6c9e-4054-a25d-02da1eb82b62" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="priority" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_command_control_type" property="Command_control_type" behavior="readwrite" uniqueId="7fddaa47-ab12-490f-82e9-53cd7ce3c4d7" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_operation_group_id" property="Operation_group_id" behavior="readwrite" uniqueId="a99d2d26-9399-4c0c-859b-1fa1715b1f12" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_device_name" property="Device_name" behavior="readwrite" uniqueId="3330327a-c2bc-4e13-b459-6bc65f5aa62d" type="System.String">
+          <orm:column name="device_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_parameter_name" property="Parameter_name" behavior="readwrite" uniqueId="7490c276-b3e5-4627-a0f2-c6dedd9e2053" type="System.String">
+          <orm:column name="parameter_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_type" property="Type" behavior="readwrite" uniqueId="b28c6d4a-123c-4354-b593-8314b21bc9e9" type="System.String">
+          <orm:column name="type" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_value" property="Value" behavior="readwrite" uniqueId="2e64d000-71a5-488c-8e1c-7eb15ad3618d" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_is_not_arragment" property="Is_not_arragment" behavior="readwrite" uniqueId="4041e557-c298-4ad5-a2ad-e899462d1e13" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="V_session_operation_combo_box" uniqueId="48f410f3-24f6-4c81-9163-c31056f5fb7a">
+        <orm:table name="v_session_operation_combo_box" view="true" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="1d8ff6a2-433e-4b77-94f3-eaae84336698" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_operation_group_id" property="Operation_group_id" behavior="readwrite" uniqueId="7fd8bd80-d1bb-44dd-8ec0-c514a011676e" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="fece708e-1bb6-460b-aa86-c69c132e70d5" type="System.String">
+          <orm:column name="name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="V_parameter" uniqueId="e8735686-709c-4c9b-9886-89d68e74ce8b">
+        <orm:table name="v_parameters" view="true" />
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="b9062b83-8e65-48f3-9c11-05b55f01974f" type="System.Int64">
+          <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_calculation_formula_id" property="Calculation_formula_id" behavior="readwrite" uniqueId="9af3317d-2123-4929-bf56-758e320ba5fd" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="calculation_formula_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_device_id" property="Device_id" behavior="readwrite" uniqueId="722443e1-3c1a-475f-b193-2ce266083672" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="device_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="fd518bf4-388a-4a11-88d2-cbfe4cdba178" type="System.String">
+          <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="223a2cfc-03db-4d83-9b85-41cde2afab61" type="System.String">
+          <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_register_address_start" property="Register_address_start" behavior="readwrite" uniqueId="d300e37a-b9eb-4991-8676-35df2d966ed4" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_access" property="Access" behavior="readwrite" uniqueId="6a2d3953-4c7f-4f73-b921-414a79be0729" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_access_name" property="Access_name" behavior="readwrite" uniqueId="3099057c-1cb0-4e3d-95f0-9a084bc14106" type="System.String">
+          <orm:column name="access_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_modbus_type_id" property="Modbus_type_id" behavior="readwrite" uniqueId="8e6b78e6-32e4-4e95-a0e5-b7e4818e6761" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="modbus_type_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_modbus_type_name" property="Modbus_type_name" behavior="readwrite" uniqueId="1ba36bc1-5264-4379-91fa-fd4ac1d52758" type="System.String">
+          <orm:column name="modbus_type_name" sql-type="bpchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_min_value" property="Min_value" behavior="readwrite" uniqueId="64a6d2a3-57a6-4c7d-85ab-7699cc3ff886" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="min_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_max_value" property="Max_value" behavior="readwrite" uniqueId="5ffd75e1-23f3-49b6-bb3a-1c2dded58889" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="max_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="value_alias">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="alias_text" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="alias_description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:constraint name="value_alias_alias_group_id_fkey" delete-action="dbdefaultrule" destination-table="alias_group">
+          <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="telemetry_data_arragment">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="session_operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="date" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+        <orm:column name="data" sql-type="bytea" nullable="true" length="0" scale="0" ado-type="Blob" />
+      </orm:table>
+      <orm:table name="telemetry">
+        <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="pdata" sql-type="bytea" nullable="true" length="0" scale="0" ado-type="Blob" />
+        <orm:column name="pdate" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
+        <orm:column name="ptime" sql-type="timetz" nullable="true" length="6" scale="0" ado-type="Time" />
+        <orm:column name="device_msg" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="device_address" sql-type="int4" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="status" sql-type="int4" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="subsystem_mode">
+        <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="code" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="alias" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:constraint name="subsystem_subsystem_mode_id_fkey" delete-action="cascade" destination-table="subsystem">
+          <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="subsystem">
+        <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="alias" sql-type="varchar" nullable="false" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:constraint name="subsystems_device_id_fkey" delete-action="cascade" destination-table="devices">
+          <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="session_operation_list">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="parameter_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="type" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="priority" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Bit" />
+        <orm:constraint name="session_operation_list_operation_group_id_fkey" delete-action="cascade" destination-table="operation_group">
+          <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+        <orm:constraint name="session_operation_list_parameter_id_fkey" delete-action="dbdefaultrule" destination-table="parameters">
+          <orm:column name="parameter_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="parameters">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="calculation_formula_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="modbus_type_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="min_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="max_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+        <orm:column name="start_bit" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        <orm:column name="end_bit" sql-type="int2" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int16" />
+        <orm:constraint name="parameters_device_id_fkey" delete-action="dbdefaultrule" destination-table="devices">
+          <orm:column name="device_id" sql-type="int8" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="operation_group">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="512" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="created_at" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="modbus_types">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="name" sql-type="bpchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="modbus_register_count" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+      </orm:table>
+      <orm:table name="modbus_function">
+        <orm:column name="id" sql-type="int2" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int16" />
+        <orm:column name="name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="code" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+      </orm:table>
+      <orm:table name="log_record">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="date" sql-type="timestamp" nullable="true" length="6" scale="0" ado-type="DateTime" />
+        <orm:column name="message" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="device_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+      </orm:table>
+      <orm:table name="devices">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="modbus_address" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="cyclogram_properties">
+        <orm:column name="id" sql-type="int4" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="modbus_start_address" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cmnd_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="start_date_time_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code_size_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="crc32_reg_count" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:index name="cyclogram_properties_subsystem_id_key" unique="true">
+          <orm:columnMapping>
+            <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="subsystem_cyclogram_properties_id_fkey" delete-action="cascade" destination-table="subsystem">
+          <orm:column name="subsystem_id" sql-type="int4" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="command_control">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="session_operation_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="hot_key" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="next_session_operation_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="show_dialog_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="show_dialog_time" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="expression" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:constraint name="command_control_session_operation_id_fkey" delete-action="cascade" destination-table="session_operation_list">
+          <orm:column name="session_operation_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="calibration_settings">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="timestmp" sql-type="timestamptz" nullable="false" length="6" scale="0" ado-type="DateTime" />
+        <orm:column name="parameters" sql-type="xml" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="text" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="calibration_notes">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="timestmp" sql-type="timestamptz" nullable="false" length="6" scale="0" ado-type="DateTime" />
+        <orm:column name="notes" sql-type="text" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="user_timestmp" sql-type="timestamptz" nullable="false" length="6" scale="0" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="calibration">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="timestmp" sql-type="timestamptz" nullable="false" length="6" scale="0" ado-type="DateTime" />
+        <orm:column name="adc" sql-type="bytea" nullable="false" length="0" scale="0" ado-type="Blob" />
+        <orm:column name="calc" sql-type="bytea" nullable="false" length="0" scale="0" ado-type="Blob" />
+      </orm:table>
+      <orm:table name="calculation_formula">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="si_unit_name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="formula" sql-type="varchar" nullable="true" length="512" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="alias_group">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="v_session_operation_list_arragment" view="true">
+        <orm:column name="session_operation_list_id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="parameter_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="priority" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="modbus_address" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="alias_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="alias_group_name" sql-type="bpchar" nullable="true" length="255" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="start_bit" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="end_bit" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="modbus_register_count" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="device_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="parameter_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="type" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" ado-type="Bit" />
+      </orm:table>
+      <orm:table name="v_session_operation_list" view="true">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="priority" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="command_control_type" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="device_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="parameter_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="type" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="value" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="is_not_arragment" sql-type="bool" nullable="true" length="0" scale="0" ado-type="Bit" />
+      </orm:table>
+      <orm:table name="v_session_operation_combo_box" view="true">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="operation_group_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="v_parameters" view="true">
+        <orm:column name="id" sql-type="int8" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="calculation_formula_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="device_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="description" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="register_address_start" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="access" sql-type="int2" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="access_name" sql-type="text" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="modbus_type_id" sql-type="int8" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="modbus_type_name" sql-type="bpchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="min_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+        <orm:column name="max_value" sql-type="float8" nullable="true" length="0" scale="0" ado-type="Double" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ConnectionTelerik</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>userid=iostrovskiy;password=gh673z;server=db.cubesat.com.ua;port=5432;database=nanotmp</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>PostgreSql</Backend>
+        <ProviderName>Npgsql</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="65e11694-a84b-43c8-9619-d46920885f33" name="Value_alia" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6eb0c542-850b-4ac0-8725-ef802d00172e" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="e52b7192-5d3e-423a-a18f-7191c9c2ed90" name="Alias_description" label="Alias_description : String" kind="Persistent" fieldName="_alias_description" />
+      <Property Id="54c124e1-dcfb-4e6d-a126-f4af42fd91a6" name="Alias_group_id" type="Int64" label="Alias_group_id : Int64" nullable="true" kind="Persistent" fieldName="_alias_group_id" />
+      <Property Id="3f487803-1d57-46d5-a3d9-a27dc706611a" name="Alias_text" label="Alias_text : String" kind="Persistent" fieldName="_alias_text" />
+      <Property Id="ed9c26d8-e075-48e3-b4c8-5b57d7eed3a9" name="Value" type="Double" label="Value : Double" nullable="true" kind="Persistent" fieldName="_value" />
+      <AssociationTargets>
+        <Association Id="3bd36f8e-6cc3-44ef-a178-832235d91ad0" SourceMultiplicity="ZeroOne" name="Value_aliaHasAlias_group">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Alias_group" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="fc3a290c-795b-48ea-8f2d-bf66fa895c75">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Alias_group/Value_alias" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="f515735d-6f31-499b-a2f1-3159d84b2d4b">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Value_alia/Alias_group" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="5f04b08b-b727-4e12-8e4b-31d2a3de88e7">
+          <NavigationalProperty Id="c1a7e672-2106-413a-86af-84abf7a1ba92" name="Alias_group" type="Alias_group" label="Alias_group : Alias_group" nullable="true" kind="Persistent" fieldName="_alias_group" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="c7a21cc5-d9a4-4f8c-b273-2dadc9a8606d" name="Telemetry_data_arragment" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="7c0135be-55f1-42a6-9480-6e7f066a8fcf" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="ef2e9636-27e6-40b9-9e76-ac10908f3304" name="Data" type="Byte[]" label="Data : Byte[]" kind="Persistent" fieldName="_data" />
+      <Property Id="721356b7-49c8-4f18-88b7-514f1a6d76c1" name="Date" type="DateTime" label="Date : DateTime" nullable="true" kind="Persistent" fieldName="_date" />
+      <Property Id="67c81d7b-684e-4bdb-b555-27ab53885d3f" name="Operation_group_id" type="Int64" label="Operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_operation_group_id" />
+      <Property Id="204454fc-745a-4170-95eb-5e0c354dc972" name="Session_operation_group_id" type="Int64" label="Session_operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_session_operation_group_id" />
+    </DomainClass>
+    <DomainClass Id="e8ff5500-499f-4a0c-a378-dbae1e8464fd" name="Telemetry" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="006041ac-74ab-4de8-97be-9cbc1ae9b4a3" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="8dedaabe-15d8-4d9d-bc07-097c32ee2cb1" name="Device_address" type="Int32" label="Device_address : Int32" nullable="true" kind="Persistent" fieldName="_device_address" />
+      <Property Id="60cdbc28-9e99-48b8-bc9e-6f2ca04e87a4" name="Device_msg" label="Device_msg : String" kind="Persistent" fieldName="_device_msg" />
+      <Property Id="be5089b3-18f9-4081-83fe-124af2f99de3" name="Pdata" type="Byte[]" label="Pdata : Byte[]" kind="Persistent" fieldName="_pdata" />
+      <Property Id="8efad50b-aa67-40a0-a551-5eb690b83933" name="Pdate" type="DateTime" label="Pdate : DateTime" nullable="true" kind="Persistent" fieldName="_pdate" />
+      <Property Id="c6a2eb97-57f8-47b2-8e46-f0f9599e25cd" name="Ptime" type="DateTime" label="Ptime : DateTime" nullable="true" kind="Persistent" fieldName="_ptime" />
+      <Property Id="f198f97b-51c1-438f-946f-25eb4d1a616c" name="Status" type="Int32" label="Status : Int32" nullable="true" kind="Persistent" fieldName="_status" />
+    </DomainClass>
+    <DomainClass Id="b90df7a3-a658-4a1a-81c9-3a39c65c8f4e" name="Subsystem_mode" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="09289835-cb75-4045-9df8-7fb2889794ed" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="269ddbd9-3778-4c34-9130-cd2422b87983" name="Alias" label="Alias : String" kind="Persistent" fieldName="_alias" />
+      <Property Id="0007a1ad-150c-4a65-b01b-061027741643" name="Code" type="Int32" label="Code : Int32" kind="Persistent" fieldName="_code" />
+      <Property Id="07bf5ffc-63e5-47b6-9088-d421a1bf08cf" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="94aff6e2-0a17-4054-aa9f-133ac23dc118" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="9dd307dd-2067-4fb7-89b2-f9a093a5b51e" name="Subsystem_id" type="Int32" label="Subsystem_id : Int32" kind="Persistent" fieldName="_subsystem_id" />
+      <AssociationTargets>
+        <Association Id="cb5af36c-3855-4834-b06e-19b6745230ac" SourceMultiplicity="One" name="Subsystem_modeHasSubsystem">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Subsystem" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="5359a26c-a1e6-4b24-bec5-909efcaeab51">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Subsystem/Subsystem_modes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="eabafc3c-9e1f-402b-923f-600a76877171">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Subsystem_mode/Subsystem" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="14fc7f44-63eb-43dd-8bbe-a05ea29a8056">
+          <NavigationalProperty Id="3a8f9ae7-c3d3-4f6e-93a5-ba54fa915134" name="Subsystem" type="Subsystem" label="Subsystem : Subsystem" nullable="true" kind="Persistent" fieldName="_subsystem" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="24c8ea80-9222-405d-bf8b-959d46309668" name="Subsystem" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="b0ed5ec3-a5e7-467a-a6ac-78f25ff28ca7" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="ffa87e01-a7ff-4537-a580-238a06df3494" name="Alias" label="Alias : String" kind="Persistent" fieldName="_alias" />
+      <Property Id="c3e59794-05c7-4c4a-83e2-59827739685c" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="75eea534-143b-440c-86b7-b0f9e04bddd3" name="Device_id" type="Int64" label="Device_id : Int64" kind="Persistent" fieldName="_device_id" />
+      <Property Id="817e269a-4bfb-4579-a1e1-8238b2e87404" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <AssociationTargets>
+        <Association Id="6c9e529f-df20-487c-b522-a5bb0e32510d" SourceMultiplicity="One" name="SubsystemHasDevice">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Device" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="4c383243-b3b2-4d09-b2c3-5d9f1e292bc7">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Device/Subsystems" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0391dd30-12a2-45cc-a967-3e94286e2c6e">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Subsystem/Device" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="f67cae9b-46e8-4d0c-832a-ecfed20fddc8">
+          <NavigationalProperty Id="418547b5-0904-4785-96bf-7cb7d2e1025a" name="Subsystem_modes" type="IList&lt;Subsystem_mode&gt;" label="Subsystem_modes : IList&lt;Subsystem_mode&gt;" nullable="true" kind="Persistent" fieldName="_subsystem_modes" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="026b75dc-c1fd-479f-a95a-0f6848fef8c1">
+          <NavigationalProperty Id="5201ae92-a0c0-435e-9f3a-576c0b1929ea" name="Device" type="Device" label="Device : Device" nullable="true" kind="Persistent" fieldName="_device" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="f18ab6f4-835e-4e84-bee6-82c54d3f8d92">
+          <NavigationalProperty Id="5fb2d74b-90ef-46fa-8fe8-41e3f5ae24e8" name="Cyclogram_properties" type="IList&lt;Cyclogram_property&gt;" label="Cyclogram_properties : IList&lt;Cyclogram_property&gt;" nullable="true" kind="Persistent" fieldName="_cyclogram_properties" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="a9b05139-3378-4094-aae5-f9e191fca235" name="Session_operation_list" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="e9d99e58-403f-4c1e-b5d6-40e48115fc76" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="87f77020-a80b-4d9d-9e0a-9f1615de4cf1" name="Command_control_type" type="Int16" label="Command_control_type : Int16" nullable="true" kind="Persistent" fieldName="_command_control_type" />
+      <Property Id="7577ec99-7166-4411-ad59-9df410dc9dea" name="Is_not_arragment" type="Boolean" label="Is_not_arragment : Boolean" nullable="true" kind="Persistent" fieldName="_is_not_arragment" />
+      <Property Id="ab82c19b-5b7d-44dd-93ac-7face700fc89" name="Operation_group_id" type="Int64" label="Operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_operation_group_id" />
+      <Property Id="cff2f326-47d1-4e86-beea-d38b165cd245" name="Parameter_id" type="Int64" label="Parameter_id : Int64" nullable="true" kind="Persistent" fieldName="_parameter_id" />
+      <Property Id="20f4e577-5b3c-44a2-9f12-8369c33de070" name="Priority" type="Int64" label="Priority : Int64" kind="Persistent" fieldName="_priority" />
+      <Property Id="f7c81845-b978-4569-8349-c5e7719f345e" name="Type" type="Int64" label="Type : Int64" nullable="true" kind="Persistent" fieldName="_type" />
+      <Property Id="6b0619eb-0c7c-46f7-800f-94fe37a5c50b" name="Value" type="Int64" label="Value : Int64" nullable="true" kind="Persistent" fieldName="_value" />
+      <AssociationTargets>
+        <Association Id="edd440c7-0454-4c51-8bca-be1a2372f418" SourceMultiplicity="ZeroOne" name="Session_operation_listHasOperation_group">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Operation_group" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="dcfc988d-9c9f-449e-a690-094074f4ab53">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Operation_group/Session_operation_lists" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="051959c6-3dbf-4b93-8694-f39caa3d9746">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Session_operation_list/Operation_group" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="078a625b-b275-41eb-a18e-3a01693a080e" SourceMultiplicity="ZeroOne" name="Session_operation_listHasParameter">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Parameter" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="c8bf47f3-8b82-4ccb-b7a1-391622eaa3d4">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Parameter/Session_operation_lists" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="3dd81d90-21ed-4e77-b75e-490bbabd33c0">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Session_operation_list/Parameter" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="c19b709a-ed7f-4f25-bf46-a0a6f27e10a6">
+          <NavigationalProperty Id="f31ab4c3-01a7-41a0-b314-a85b898d835e" name="Operation_group" type="Operation_group" label="Operation_group : Operation_group" nullable="true" kind="Persistent" fieldName="_operation_group" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="20983ad5-7c07-4dc9-b45b-b7b2fea39b71">
+          <NavigationalProperty Id="02f214bc-3d1c-431c-b0ef-a0821d165d2b" name="Parameter" type="Parameter" label="Parameter : Parameter" nullable="true" kind="Persistent" fieldName="_parameter" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="fc759f26-7fa0-42ea-b5af-6b9e226f8092">
+          <NavigationalProperty Id="ba6e40b7-08de-4785-a06e-9431d318899b" name="Command_controls" type="IList&lt;Command_control&gt;" label="Command_controls : IList&lt;Command_control&gt;" nullable="true" kind="Persistent" fieldName="_command_controls" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="71b2291e-69b5-4285-82d9-a2c08196285d" name="Parameter" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="da0263e7-5d38-4e31-b08e-752dcac02382" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="f9958a39-283f-41d9-94ff-fcb68d8da90b" name="Access" type="Int16" label="Access : Int16" nullable="true" kind="Persistent" fieldName="_access" />
+      <Property Id="94b195a3-09ab-4c71-96f1-832356149ea2" name="Alias_group_id" type="Int64" label="Alias_group_id : Int64" nullable="true" kind="Persistent" fieldName="_alias_group_id" />
+      <Property Id="5b2dcd0a-b6a2-437d-8aad-9bcc0f96cd5c" name="Calculation_formula_id" type="Int64" label="Calculation_formula_id : Int64" nullable="true" kind="Persistent" fieldName="_calculation_formula_id" />
+      <Property Id="234adb72-a63b-4f3e-922e-d536e16ce3b0" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="d57a0877-fd02-486f-81b7-8e1bc4abec86" name="Device_id" type="Int64" label="Device_id : Int64" kind="Persistent" fieldName="_device_id" />
+      <Property Id="7ee7a306-63cc-4d71-9fca-989911d3405f" name="End_bit" type="Int16" label="End_bit : Int16" nullable="true" kind="Persistent" fieldName="_end_bit" />
+      <Property Id="202ba2ab-7b3b-43ca-a101-a3bd6d48396a" name="Max_value" type="Double" label="Max_value : Double" nullable="true" kind="Persistent" fieldName="_max_value" />
+      <Property Id="38647fcd-34cc-4bd1-97c2-50ec0ae3b2c8" name="Min_value" type="Double" label="Min_value : Double" nullable="true" kind="Persistent" fieldName="_min_value" />
+      <Property Id="f6510642-c6d7-4275-8fb1-d321fe92e36f" name="Modbus_type_id" type="Int64" label="Modbus_type_id : Int64" nullable="true" kind="Persistent" fieldName="_modbus_type_id" />
+      <Property Id="fc7fffd9-48bc-4709-b677-b237d5663bfd" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="899e667a-617b-4815-b461-37354039ba30" name="Register_address_start" type="Int64" label="Register_address_start : Int64" nullable="true" kind="Persistent" fieldName="_register_address_start" />
+      <Property Id="7cbd7c5f-844a-4522-87bc-73c8105d89a3" name="Start_bit" type="Int16" label="Start_bit : Int16" nullable="true" kind="Persistent" fieldName="_start_bit" />
+      <AssociationTargets>
+        <Association Id="60f78350-9571-4a62-a468-40039c95f5a7" SourceMultiplicity="One" name="ParameterHasDevice">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Device" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="738e894d-02b3-43ce-a4b6-1f1c976a408c">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Device/Parameters" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e59e70fc-09d1-4ef7-abf3-415e709bc33c">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Parameter/Device" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="012c62c7-692f-43ba-8361-646869dbe8b9">
+          <NavigationalProperty Id="ad5caf47-b638-4b6e-a79f-a14777484769" name="Session_operation_lists" type="IList&lt;Session_operation_list&gt;" label="Session_operation_lists : IList&lt;Session_operation_list&gt;" nullable="true" kind="Persistent" fieldName="_session_operation_lists" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9b689c5b-8c25-4bdb-9a8b-b637740e8210">
+          <NavigationalProperty Id="29be67ad-f801-49a2-9898-395686e22bdf" name="Device" type="Device" label="Device : Device" nullable="true" kind="Persistent" fieldName="_device" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="45f8e24b-4ac7-4519-8516-e01a9c560c34" name="Operation_group" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="fbaad054-f005-4d15-ac3c-11150f2e1bf3" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="b929c542-82ec-42ed-b386-a76690ad03a9" name="Created_at" type="DateTime" label="Created_at : DateTime" nullable="true" kind="Persistent" fieldName="_created_at" />
+      <Property Id="0b557289-4809-4f24-bd4f-e0e85b7d19e6" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="34e504b5-7f0a-4c15-a9a8-5d1a3ec13b64">
+          <NavigationalProperty Id="71d2863a-ead8-4d01-adca-92afcf91d956" name="Session_operation_lists" type="IList&lt;Session_operation_list&gt;" label="Session_operation_lists : IList&lt;Session_operation_list&gt;" nullable="true" kind="Persistent" fieldName="_session_operation_lists" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ae4ac2a9-01fc-40eb-8614-1578a056a601" name="Modbus_type" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="f53bdfb9-a02a-4eff-9d52-22370785896a" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="d54e4133-7d0f-41d2-9663-6d31d3f0f890" name="Modbus_register_count" type="Int16" label="Modbus_register_count : Int16" nullable="true" kind="Persistent" fieldName="_modbus_register_count" />
+      <Property Id="334921eb-3134-4118-a600-ed7733ca09ad" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+    </DomainClass>
+    <DomainClass Id="2eb2cee8-0cf0-4910-ab1f-338e2699da88" name="Modbus_function" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="b5c8f04a-4ce5-4314-9ee0-7e31d9dfa5ab" name="Id" type="Int16" label="Id : Int16" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="7728829f-f498-441b-a687-c762cb4833d2" name="Code" type="Int16" label="Code : Int16" nullable="true" kind="Persistent" fieldName="_code" />
+      <Property Id="9fcf2b76-106f-4942-b92d-4806dc7464ac" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="99e93740-34cf-4203-80e4-cad23e9e9ede" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+    </DomainClass>
+    <DomainClass Id="dd65725e-7b78-46a7-8a94-588c3b322106" name="Log_record" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="cede98c7-9331-4d8c-8ba5-c5711fd959ae" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="6777477d-f068-4a5b-959b-47a6e405b076" name="Date" type="DateTime" label="Date : DateTime" nullable="true" kind="Persistent" fieldName="_date" />
+      <Property Id="ee6c312a-b276-41e8-8794-df924b901ec5" name="Device_id" type="Int64" label="Device_id : Int64" nullable="true" kind="Persistent" fieldName="_device_id" />
+      <Property Id="9c994d4a-8753-464e-be30-8b760256a5c5" name="Message" label="Message : String" kind="Persistent" fieldName="_message" />
+      <Property Id="b35c721a-61d7-46ad-8acc-013a8175afee" name="Type" type="Int16" label="Type : Int16" nullable="true" kind="Persistent" fieldName="_type" />
+    </DomainClass>
+    <DomainClass Id="21ca280f-5221-4765-96b3-98d682ab4134" name="Device" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="228a409c-0501-4c2f-8bfa-a493fd0cff01" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="483a4207-a589-4150-9eda-c86c7a6d9025" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="30580e61-b2e1-4f61-8846-4364101b8a93" name="Modbus_address" type="Int16" label="Modbus_address : Int16" nullable="true" kind="Persistent" fieldName="_modbus_address" />
+      <Property Id="0c794092-ef01-4527-b5c0-98d118c3eb44" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="68c2d26f-6f32-4074-b2ef-8c962bb66f24">
+          <NavigationalProperty Id="11735474-da67-463c-a6e8-7affae8c078b" name="Subsystems" type="IList&lt;Subsystem&gt;" label="Subsystems : IList&lt;Subsystem&gt;" nullable="true" kind="Persistent" fieldName="_subsystems" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="ca818086-e2c0-43bd-abc0-c1162b887d57">
+          <NavigationalProperty Id="d613b1ed-701d-46be-a05d-853e789a6179" name="Parameters" type="IList&lt;Parameter&gt;" label="Parameters : IList&lt;Parameter&gt;" nullable="true" kind="Persistent" fieldName="_parameters" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="e80b19f6-3c10-4a6b-b39a-e55d04fdc31d" name="Cyclogram_property" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="07eef47e-e7bd-40c0-af14-8c81bd57f71d" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="3ad03053-746d-4ba9-8b8a-47bc1a4168db" name="Cmnd_reg_count" type="Int32" label="Cmnd_reg_count : Int32" kind="Persistent" fieldName="_cmnd_reg_count" />
+      <Property Id="855c51e0-00ae-41f0-a22c-cdd396528e37" name="Code_reg_count" type="Int32" label="Code_reg_count : Int32" kind="Persistent" fieldName="_code_reg_count" />
+      <Property Id="6db70af7-2745-431e-bc76-e89e49661520" name="Code_size_reg_count" type="Int32" label="Code_size_reg_count : Int32" kind="Persistent" fieldName="_code_size_reg_count" />
+      <Property Id="d29c4fc5-901e-4576-8d8d-08dcae92ff64" name="Crc32_reg_count" type="Int32" label="Crc32_reg_count : Int32" kind="Persistent" fieldName="_crc32_reg_count" />
+      <Property Id="2aa815fa-eb86-4aee-8687-b36e4ec084ad" name="Modbus_start_address" type="Int32" label="Modbus_start_address : Int32" kind="Persistent" fieldName="_modbus_start_address" />
+      <Property Id="e8d257cf-793a-4ab7-85f6-3f719ff82c82" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="d498edb0-4b84-4431-8572-21eecc9dc8aa" name="Start_date_time_reg_count" type="Int32" label="Start_date_time_reg_count : Int32" kind="Persistent" fieldName="_start_date_time_reg_count" />
+      <Property Id="79b9658d-636f-44fb-b88a-6d4c99141919" name="Subsystem_id" type="Int32" label="Subsystem_id : Int32" kind="Persistent" fieldName="_subsystem_id" />
+      <AssociationTargets>
+        <Association Id="47cdd1e4-11b1-40d6-b270-77114897d707" SourceMultiplicity="One" name="Cyclogram_propertyHasSubsystem">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Subsystem" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="cb6a0b2e-085b-44f8-bdda-308abb020875">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Subsystem/Cyclogram_properties" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e8aa5e9d-62e2-48b0-b920-2dd06c884770">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Cyclogram_property/Subsystem" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="13a3e1c7-1062-4ebe-ae6d-2e07f7cbcc96">
+          <NavigationalProperty Id="ea280fdb-0a4f-4529-ac8a-067a862c1432" name="Subsystem" type="Subsystem" label="Subsystem : Subsystem" nullable="true" kind="Persistent" fieldName="_subsystem" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="6562ef45-a508-4af6-85bd-0d368e6b8ef4" name="Command_control" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="a8eb63fc-4c7d-4241-9a29-9aa6d9848a86" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="69a059a0-edf0-4f93-910d-b9ddf4033f98" name="Expression" label="Expression : String" kind="Persistent" fieldName="_expression" />
+      <Property Id="c924748e-059e-4190-afe3-24182c0e391b" name="Hot_key" label="Hot_key : String" kind="Persistent" fieldName="_hot_key" />
+      <Property Id="b29e3b48-12bf-44f9-997d-f752e97c68f0" name="Next_session_operation_id" type="Int64" label="Next_session_operation_id : Int64" nullable="true" kind="Persistent" fieldName="_next_session_operation_id" />
+      <Property Id="d7c6e11d-64d7-401c-a779-122846d3c54f" name="Session_operation_id" type="Int64" label="Session_operation_id : Int64" nullable="true" kind="Persistent" fieldName="_session_operation_id" />
+      <Property Id="d9ccc0fc-6e13-4eae-b0fc-8023144edc01" name="Show_dialog_time" type="Int64" label="Show_dialog_time : Int64" nullable="true" kind="Persistent" fieldName="_show_dialog_time" />
+      <Property Id="ad09b851-eaa7-41ec-9bbe-f13b7407057f" name="Show_dialog_type" type="Int16" label="Show_dialog_type : Int16" nullable="true" kind="Persistent" fieldName="_show_dialog_type" />
+      <AssociationTargets>
+        <Association Id="dfe24b7b-cde7-4663-8bfc-5fcc3293bc2d" SourceMultiplicity="ZeroOne" name="Command_controlHasSession_operation_list">
+          <DomainClassMoniker name="/SatelliteModelTelerik/Session_operation_list" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="4bc89c61-39c1-4c80-8653-e5956b53c9ca">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Session_operation_list/Command_controls" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="eb54bc5a-2b4f-47ae-8b13-94467b9fa3c7">
+              <NavigationalPropertyMoniker name="/SatelliteModelTelerik/Command_control/Session_operation_list" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="054ef02f-5e72-48fc-82bb-c58d63e5ffa7">
+          <NavigationalProperty Id="46da78b9-b206-4672-ab31-c3852daee2e2" name="Session_operation_list" type="Session_operation_list" label="Session_operation_list : Session_operation_list" nullable="true" kind="Persistent" fieldName="_session_operation_list" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="6e892a89-4e2b-4859-8d82-eed4d14fd6d1" name="Calculation_formula" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="f179b7db-322d-4428-9fd7-05fc3e9baf56" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="333db18d-0df1-4e8e-b3a6-888067c8dff8" name="Formula" label="Formula : String" kind="Persistent" fieldName="_formula" />
+      <Property Id="ddc30df3-7374-4283-884d-b8cd6824b018" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="a7d443b0-6e73-4a7e-a712-6fe971566caf" name="Si_unit_name" label="Si_unit_name : String" kind="Persistent" fieldName="_si_unit_name" />
+    </DomainClass>
+    <DomainClass Id="27bae60a-65d6-499d-a166-bce25e881ca5" name="Alias_group" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="392d5735-c06b-4297-ba49-15d8dc00c4e2" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="7a7e0d2d-6908-4fe5-b730-36799fd9dccd" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="a07043ce-78ac-4b65-90d4-52c23b9e2393" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="cbe28074-5ea3-40a9-9656-59ef3c6ef67f">
+          <NavigationalProperty Id="a52e8aed-b34e-437a-8df9-9bfb734fe06b" name="Value_alias" type="IList&lt;Value_alia&gt;" label="Value_alias : IList&lt;Value_alia&gt;" nullable="true" kind="Persistent" fieldName="_value_alias" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="fdaf705d-6d70-47ab-9292-7a0e67c31ce5" name="V_session_operation_list_arragment" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="a21551be-c805-4658-bc40-65b17b7f4cc1" name="Access" type="Int16" label="Access : Int16" nullable="true" kind="Persistent" fieldName="_access" />
+      <Property Id="3d7711a0-f33e-462d-bf83-5b7cc2028bd6" name="Alias_group_id" type="Int64" label="Alias_group_id : Int64" nullable="true" kind="Persistent" fieldName="_alias_group_id" />
+      <Property Id="912bb752-716d-4e71-8382-475e68192392" name="Alias_group_name" label="Alias_group_name : String" kind="Persistent" fieldName="_alias_group_name" />
+      <Property Id="a527cd4c-c657-4dc5-82f4-8e240fb15554" name="Command_control_type" type="Int16" label="Command_control_type : Int16" nullable="true" kind="Persistent" fieldName="_command_control_type" />
+      <Property Id="e150711e-bab4-4324-b46e-3589a1da4d34" name="Device_name" label="Device_name : String" kind="Persistent" fieldName="_device_name" />
+      <Property Id="70c8c27d-e864-44a1-aa3c-5c2cd40c5b23" name="End_bit" type="Int16" label="End_bit : Int16" nullable="true" kind="Persistent" fieldName="_end_bit" />
+      <Property Id="f5231158-9b83-41f9-b3ad-ea9c2f3d1834" name="Is_not_arragment" type="Boolean" label="Is_not_arragment : Boolean" nullable="true" kind="Persistent" fieldName="_is_not_arragment" />
+      <Property Id="84b47cbe-6c8f-4cbe-929b-086b12073c2a" name="Modbus_address" type="Int16" label="Modbus_address : Int16" nullable="true" kind="Persistent" fieldName="_modbus_address" />
+      <Property Id="8ba311a3-d971-49b6-9383-ba793d54c78b" name="Modbus_register_count" type="Int16" label="Modbus_register_count : Int16" nullable="true" kind="Persistent" fieldName="_modbus_register_count" />
+      <Property Id="3bf278f4-2329-4fb6-ab76-382fdf8db344" name="Operation_group_id" type="Int64" label="Operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_operation_group_id" />
+      <Property Id="3b443a69-63ff-48a1-b202-1907fce754e1" name="Parameter_id" type="Int64" label="Parameter_id : Int64" nullable="true" kind="Persistent" fieldName="_parameter_id" />
+      <Property Id="7ae3b176-edb4-4016-aaf6-91c87faf58c5" name="Parameter_name" label="Parameter_name : String" kind="Persistent" fieldName="_parameter_name" />
+      <Property Id="23335a06-231c-47c7-9b98-bef896af9331" name="Priority" type="Int64" label="Priority : Int64" nullable="true" kind="Persistent" fieldName="_priority" />
+      <Property Id="4d033318-1c6e-49a5-a89f-f334a11514d0" name="Register_address_start" type="Int64" label="Register_address_start : Int64" nullable="true" kind="Persistent" fieldName="_register_address_start" />
+      <Property Id="106c95b1-1651-4677-bacd-46e405978a35" name="Session_operation_list_id" type="Int64" label="Session_operation_list_id : Int64" kind="Persistent" identity="true" fieldName="_session_operation_list_id" />
+      <Property Id="def2b778-bca7-4375-b0b5-5ad4131ba525" name="Start_bit" type="Int16" label="Start_bit : Int16" nullable="true" kind="Persistent" fieldName="_start_bit" />
+      <Property Id="292a0f5f-f12e-45f1-8087-502700a21bc2" name="Type" label="Type : String" kind="Persistent" fieldName="_type" />
+      <Property Id="4be52a1c-2017-472b-ab96-ccab7d6366b7" name="Value" type="Int64" label="Value : Int64" nullable="true" kind="Persistent" fieldName="_value" />
+    </DomainClass>
+    <DomainClass Id="771e76ba-e6c2-4880-9ba7-d1e0be7bdce1" name="V_session_operation_list" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="7fddaa47-ab12-490f-82e9-53cd7ce3c4d7" name="Command_control_type" type="Int16" label="Command_control_type : Int16" nullable="true" kind="Persistent" fieldName="_command_control_type" />
+      <Property Id="3330327a-c2bc-4e13-b459-6bc65f5aa62d" name="Device_name" label="Device_name : String" kind="Persistent" fieldName="_device_name" />
+      <Property Id="6f5763ed-355e-432c-80c0-90d02956990f" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="4041e557-c298-4ad5-a2ad-e899462d1e13" name="Is_not_arragment" type="Boolean" label="Is_not_arragment : Boolean" nullable="true" kind="Persistent" fieldName="_is_not_arragment" />
+      <Property Id="a99d2d26-9399-4c0c-859b-1fa1715b1f12" name="Operation_group_id" type="Int64" label="Operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_operation_group_id" />
+      <Property Id="7490c276-b3e5-4627-a0f2-c6dedd9e2053" name="Parameter_name" label="Parameter_name : String" kind="Persistent" fieldName="_parameter_name" />
+      <Property Id="f7f6de88-6c9e-4054-a25d-02da1eb82b62" name="Priority" type="Int64" label="Priority : Int64" nullable="true" kind="Persistent" fieldName="_priority" />
+      <Property Id="b28c6d4a-123c-4354-b593-8314b21bc9e9" name="Type" label="Type : String" kind="Persistent" fieldName="_type" />
+      <Property Id="2e64d000-71a5-488c-8e1c-7eb15ad3618d" name="Value" type="Int64" label="Value : Int64" nullable="true" kind="Persistent" fieldName="_value" />
+    </DomainClass>
+    <DomainClass Id="48f410f3-24f6-4c81-9163-c31056f5fb7a" name="V_session_operation_combo_box" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="1d8ff6a2-433e-4b77-94f3-eaae84336698" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="fece708e-1bb6-460b-aa86-c69c132e70d5" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="7fd8bd80-d1bb-44dd-8ec0-c514a011676e" name="Operation_group_id" type="Int64" label="Operation_group_id : Int64" nullable="true" kind="Persistent" fieldName="_operation_group_id" />
+    </DomainClass>
+    <DomainClass Id="e8735686-709c-4c9b-9886-89d68e74ce8b" name="V_parameter" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6a2d3953-4c7f-4f73-b921-414a79be0729" name="Access" type="Int16" label="Access : Int16" nullable="true" kind="Persistent" fieldName="_access" />
+      <Property Id="3099057c-1cb0-4e3d-95f0-9a084bc14106" name="Access_name" label="Access_name : String" kind="Persistent" fieldName="_access_name" />
+      <Property Id="9af3317d-2123-4929-bf56-758e320ba5fd" name="Calculation_formula_id" type="Int64" label="Calculation_formula_id : Int64" nullable="true" kind="Persistent" fieldName="_calculation_formula_id" />
+      <Property Id="223a2cfc-03db-4d83-9b85-41cde2afab61" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="722443e1-3c1a-475f-b193-2ce266083672" name="Device_id" type="Int64" label="Device_id : Int64" nullable="true" kind="Persistent" fieldName="_device_id" />
+      <Property Id="b9062b83-8e65-48f3-9c11-05b55f01974f" name="Id" type="Int64" label="Id : Int64" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="5ffd75e1-23f3-49b6-bb3a-1c2dded58889" name="Max_value" type="Double" label="Max_value : Double" nullable="true" kind="Persistent" fieldName="_max_value" />
+      <Property Id="64a6d2a3-57a6-4c7d-85ab-7699cc3ff886" name="Min_value" type="Double" label="Min_value : Double" nullable="true" kind="Persistent" fieldName="_min_value" />
+      <Property Id="8e6b78e6-32e4-4e95-a0e5-b7e4818e6761" name="Modbus_type_id" type="Int64" label="Modbus_type_id : Int64" nullable="true" kind="Persistent" fieldName="_modbus_type_id" />
+      <Property Id="1ba36bc1-5264-4379-91fa-fd4ac1d52758" name="Modbus_type_name" label="Modbus_type_name : String" kind="Persistent" fieldName="_modbus_type_name" />
+      <Property Id="fd518bf4-388a-4a11-88d2-cbfe4cdba178" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="d300e37a-b9eb-4991-8676-35df2d966ed4" name="Register_address_start" type="Int64" label="Register_address_start : Int64" nullable="true" kind="Persistent" fieldName="_register_address_start" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="82e79595-f2e0-489b-957a-eae399a2f131">
+      <domainContainer name="SatelliteModelTelerik" namespace="GroundStation.model.entity.telerik" showPropertiesCompartment="true">
+        <entitySetProperty name="Value_alias" namespace="GroundStation.model.entity.telerik" type="Value_alia" label="Value_alias : IQueryable&lt;GroundStation.model.entity.telerik.Value_alia&gt;" />
+        <entitySetProperty name="Telemetry_data_arragments" namespace="GroundStation.model.entity.telerik" type="Telemetry_data_arragment" label="Telemetry_data_arragments : IQueryable&lt;GroundStation.model.entity.telerik.Telemetry_data_arragment&gt;" />
+        <entitySetProperty name="Telemetries" namespace="GroundStation.model.entity.telerik" type="Telemetry" label="Telemetries : IQueryable&lt;GroundStation.model.entity.telerik.Telemetry&gt;" />
+        <entitySetProperty name="Subsystem_modes" namespace="GroundStation.model.entity.telerik" type="Subsystem_mode" label="Subsystem_modes : IQueryable&lt;GroundStation.model.entity.telerik.Subsystem_mode&gt;" />
+        <entitySetProperty name="Subsystems" namespace="GroundStation.model.entity.telerik" type="Subsystem" label="Subsystems : IQueryable&lt;GroundStation.model.entity.telerik.Subsystem&gt;" />
+        <entitySetProperty name="Session_operation_lists" namespace="GroundStation.model.entity.telerik" type="Session_operation_list" label="Session_operation_lists : IQueryable&lt;GroundStation.model.entity.telerik.Session_operation_list&gt;" />
+        <entitySetProperty name="Parameters" namespace="GroundStation.model.entity.telerik" type="Parameter" label="Parameters : IQueryable&lt;GroundStation.model.entity.telerik.Parameter&gt;" />
+        <entitySetProperty name="Operation_groups" namespace="GroundStation.model.entity.telerik" type="Operation_group" label="Operation_groups : IQueryable&lt;GroundStation.model.entity.telerik.Operation_group&gt;" />
+        <entitySetProperty name="Modbus_types" namespace="GroundStation.model.entity.telerik" type="Modbus_type" label="Modbus_types : IQueryable&lt;GroundStation.model.entity.telerik.Modbus_type&gt;" />
+        <entitySetProperty name="Modbus_functions" namespace="GroundStation.model.entity.telerik" type="Modbus_function" label="Modbus_functions : IQueryable&lt;GroundStation.model.entity.telerik.Modbus_function&gt;" />
+        <entitySetProperty name="Log_records" namespace="GroundStation.model.entity.telerik" type="Log_record" label="Log_records : IQueryable&lt;GroundStation.model.entity.telerik.Log_record&gt;" />
+        <entitySetProperty name="Devices" namespace="GroundStation.model.entity.telerik" type="Device" label="Devices : IQueryable&lt;GroundStation.model.entity.telerik.Device&gt;" />
+        <entitySetProperty name="Cyclogram_properties" namespace="GroundStation.model.entity.telerik" type="Cyclogram_property" label="Cyclogram_properties : IQueryable&lt;GroundStation.model.entity.telerik.Cyclogram_property&gt;" />
+        <entitySetProperty name="Command_controls" namespace="GroundStation.model.entity.telerik" type="Command_control" label="Command_controls : IQueryable&lt;GroundStation.model.entity.telerik.Command_control&gt;" />
+        <entitySetProperty name="Calculation_formulas" namespace="GroundStation.model.entity.telerik" type="Calculation_formula" label="Calculation_formulas : IQueryable&lt;GroundStation.model.entity.telerik.Calculation_formula&gt;" />
+        <entitySetProperty name="Alias_groups" namespace="GroundStation.model.entity.telerik" type="Alias_group" label="Alias_groups : IQueryable&lt;GroundStation.model.entity.telerik.Alias_group&gt;" />
+        <entitySetProperty name="V_session_operation_list_arragments" namespace="GroundStation.model.entity.telerik" type="V_session_operation_list_arragment" label="V_session_operation_list_arragments : IQueryable&lt;GroundStation.model.entity.telerik.V_session_operation_list_arragment&gt;" />
+        <entitySetProperty name="V_session_operation_lists" namespace="GroundStation.model.entity.telerik" type="V_session_operation_list" label="V_session_operation_lists : IQueryable&lt;GroundStation.model.entity.telerik.V_session_operation_list&gt;" />
+        <entitySetProperty name="V_session_operation_combo_boxes" namespace="GroundStation.model.entity.telerik" type="V_session_operation_combo_box" label="V_session_operation_combo_boxes : IQueryable&lt;GroundStation.model.entity.telerik.V_session_operation_combo_box&gt;" />
+        <entitySetProperty name="V_parameters" namespace="GroundStation.model.entity.telerik" type="V_parameter" label="V_parameters : IQueryable&lt;GroundStation.model.entity.telerik.V_parameter&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
